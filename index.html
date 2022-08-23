@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>React para iniciantes</title>
+</head>
+<body>
+    <!--
+        O app será renderizado neste container
+    -->
+    <div id="app"></div>
+    
+    <!-- 
+        Estes links são importados separadamente com a finalidade de distinguir a parte do react que é reutilizavel para o React Native (react-development) da parte especifica que controla a DOM de uma pagina web (react-dom.development)
+    -->
+    <script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
+    <!--
+        Babel serve para transformar o codigo escrito em JSX em funçoes react para a criação dos elementos
+    -->
+    <script crossorigin src="https://unpkg.com/@babel/standalone@7/babel.min.js"></script>
+
+    <script type="text/babel">
+        // Por convenção, os componentes react são declarados no padrão PascalCased
+        function App() {
+            // Daqui pra frente fica a parte especifica da biblioteca. O que parece com um pedaço de código HTML é retornado como o componente react escritp em JSX
+            return <div>Meu App</div>
+        }
+        // Esta função é a responsavel por renderizar um componente react (passado como primeiro argumento) em um container alvo (passado como segundo argumento)
+        ReactDOM.render(<App/>, document.querySelector('#app'))
+    </script>
+</body>
+</html>
