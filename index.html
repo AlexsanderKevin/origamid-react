@@ -24,12 +24,57 @@
 
     <script type="text/babel">
         // Por convenção, os componentes react são declarados no padrão PascalCased
-        function App() {
+        const App = () => {
+            // É possível utilizar qualquer codigo javascript aqui para poder aplicar depois ao componente entre {}
+            const text = 'Texto do meu app ... '
+
             // Daqui pra frente fica a parte especifica da biblioteca. O que parece com um pedaço de código HTML é retornado como o componente react escritp em JSX
-            return <div>Meu App</div>
+            return <div>
+                        <Titulo />
+                        <Button />
+                        <div>Meu App {text}</div>
+                    </div>
         }
+
+        const Titulo = () => {
+            return <h1>Título</h1>
+        }
+
+        // Outra maneira de definir um componente é utilizando classes
+        class Button extends React.Component {
+            render() {
+                return <button>Comprar</button>
+            }
+        }
+
+        const Produtos = () => {
+	        function handleClick(event) {
+			    alert('Comprou: ' + event.target.innerText)
+	        }
+
+	        return (
+		    <div>
+			    <button onClick={handleClick}>Camisa</button>
+			    <button onClick={handleClick}>Bermuda</button>
+		    </div>
+	        )
+        }
+
+        const Compras = () => {
+            // useState é um Hook que define ua variável reativa
+            const [count, setCount] = React.useState(0)
+
+            return (
+                <div>
+                    <button onClick={() => setCount(count + 1)}> Comprar: {count}</button>
+                    <p>Total: {count}</p>
+                    <p>Preço: R$ {count * 250}</p>
+                </div>
+            )
+        }
+
         // Esta função é a responsavel por renderizar um componente react (passado como primeiro argumento) em um container alvo (passado como segundo argumento)
-        ReactDOM.render(<App/>, document.querySelector('#app'))
+        ReactDOM.render(<Compras/>, document.querySelector('#app'))
     </script>
 </body>
 </html>
