@@ -5,13 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>React para iniciantes</title>
-</head>
-<body>
-    <!--
-        O app será renderizado neste container
-    -->
-    <div id="app"></div>
-    
+
     <!-- 
         Estes links são importados separadamente com a finalidade de distinguir a parte do react que é reutilizavel para o React Native (react-development) da parte especifica que controla a DOM de uma pagina web (react-dom.development)
     -->
@@ -22,59 +16,57 @@
     -->
     <script crossorigin src="https://unpkg.com/@babel/standalone@7/babel.min.js"></script>
 
+</head>
+<body>
+    <!-- JavaScript -->
+    <!-- <h1>JavaScript</h1>
+    <div id="app-javascript">
+        <p>Total: <span id="total"></span></p>
+        <p>Preço: R$ <span id="preco"></span></p>
+        <button id="button">Comprar</button>
+    </div>
+
+    <script type="text/javascript">
+        const button = document.querySelector('#button')
+        const total = document.querySelector('#total')
+        const preco = document.querySelector('#preco')
+
+        let contador = 1
+
+        function atualizarValores(contador) {
+            total.innerText = contador
+            preco.innerText = contador * 250
+        }
+        atualizarValores(contador)
+
+        function handleClick() {
+            contador = contador + 1
+            atualizarValores(contador + 1)
+        }
+
+        button.addEventListener('click', handleClick)
+    </script> -->
+
+    <!-- React -->
+    <h1>React</h1>
+    <div id="app-react"></div>
+
     <script type="text/babel">
-        // Por convenção, os componentes react são declarados no padrão PascalCased
-        const App = () => {
-            // É possível utilizar qualquer codigo javascript aqui para poder aplicar depois ao componente entre {}
-            const text = 'Texto do meu app ... '
-
-            // Daqui pra frente fica a parte especifica da biblioteca. O que parece com um pedaço de código HTML é retornado como o componente react escritp em JSX
-            return <div>
-                        <Titulo />
-                        <Button />
-                        <div>Meu App {text}</div>
-                    </div>
-        }
-
-        const Titulo = () => {
-            return <h1>Título</h1>
-        }
-
-        // Outra maneira de definir um componente é utilizando classes
-        class Button extends React.Component {
-            render() {
-                return <button>Comprar</button>
-            }
-        }
-
-        const Produtos = () => {
-	        function handleClick(event) {
-			    alert('Comprou: ' + event.target.innerText)
-	        }
-
-	        return (
-		    <div>
-			    <button onClick={handleClick}>Camisa</button>
-			    <button onClick={handleClick}>Bermuda</button>
-		    </div>
-	        )
-        }
-
-        const Compras = () => {
-            // useState é um Hook que define ua variável reativa
-            const [count, setCount] = React.useState(0)
-
+        const Comprar = () => {
+            const [contador, setContador] = React.useState(1)
+            
             return (
                 <div>
-                    <button onClick={() => setCount(count + 1)}> Comprar: {count}</button>
-                    <p>Total: {count}</p>
-                    <p>Preço: R$ {count * 250}</p>
+                    <p>Total: {contador}</p>
+                    <p>Preço: R$ {contador * 250},00</p>
+                    <button onClick={() => setContador(contador + 1)}>
+                        Comprar
+                    </button>
                 </div>
             )
         }
-
-        // Esta função é a responsavel por renderizar um componente react (passado como primeiro argumento) em um container alvo (passado como segundo argumento)
-        ReactDOM.render(<Compras/>, document.querySelector('#app'))
+        
+        ReactDOM.render(<Comprar />, document.getElementById('app-react'))
     </script>
 </body>
 </html>
