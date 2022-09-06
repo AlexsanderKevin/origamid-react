@@ -18,55 +18,7 @@
 
 </head>
 <body>
-    <!-- JavaScript -->
-    <!-- <h1>JavaScript</h1>
-    <div id="app-javascript">
-        <p>Total: <span id="total"></span></p>
-        <p>Preço: R$ <span id="preco"></span></p>
-        <button id="button">Comprar</button>
-    </div>
-
-    <script type="text/javascript">
-        const button = document.querySelector('#button')
-        const total = document.querySelector('#total')
-        const preco = document.querySelector('#preco')
-
-        let contador = 1
-
-        function atualizarValores(contador) {
-            total.innerText = contador
-            preco.innerText = contador * 250
-        }
-        atualizarValores(contador)
-
-        function handleClick() {
-            contador = contador + 1
-            atualizarValores(contador + 1)
-        }
-
-        button.addEventListener('click', handleClick)
-    </script> -->
-
-    <!-- React -->
-    <h1>React</h1>
-    <div id="app-react"></div>
-
-    <script type="text/babel">
-        const Comprar = () => {
-            const [contador, setContador] = React.useState(1)
-            
-            return (
-                <div>
-                    <p>Total: {contador}</p>
-                    <p>Preço: R$ {contador * 250},00</p>
-                    <button onClick={() => setContador(contador + 1)}>
-                        Comprar
-                    </button>
-                </div>
-            )
-        }
-        
-        ReactDOM.render(<Comprar />, document.getElementById('app-react'))
-    </script>
+    <div id="root"></div>
+    <script src="main.js"></script>
 </body>
 </html>
