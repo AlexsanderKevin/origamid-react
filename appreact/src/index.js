@@ -1,14 +1,10 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import App from './App';
-import AppJSXExpressao from './aula-0207/AppJSXExpressao';
-import AppStyle from './aula-0207/Style';
+import Exercicio01 from './aula-0207/Exercicio01';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <App />
-    <AppJSXExpressao />
-    <AppStyle />
+    <Exercicio01 />
   </React.StrictMode>
 );
