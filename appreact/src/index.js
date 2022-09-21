@@ -1,11 +1,13 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import Ex0208 from './components/aula-0208/exercicio/exercicio-0208';
+import Children from './components/aula-0211/Children';
+import Dados01 from './components/aula-0211/Dados01';
+import Spread from './components/aula-0211/Spread';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   
   <React.StrictMode>
-    <Ex0208 />
+    <Dados01/>
   </React.StrictMode>
 );
