@@ -25,7 +25,7 @@ const App = () => {
       { email && <p>{ email }</p> }
       { produto && <p>{ produto }</p> }
       { cor && <p>{ cor }</p> }
-      { linguagens && linguagens.map( linguagem => <p key={ linguagem }>{ linguagem }</p>)}
+      { linguagens && linguagens.map( linguagem => <p key={ linguagem }>{ linguagem }</p>) }
     </form>
   )
 }
