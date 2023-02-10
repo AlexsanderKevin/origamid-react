@@ -11,13 +11,8 @@ export const Slide = ({ slides }) => {
     setPosition( -(width * active) )
   }, [ active ])
 
-  function slidePrev() {
-    if ( active > 0 ) setActive( active - 1 )
-  }
-
-  function slideNext() {
-    if ( active < slides.length -1 ) setActive( active + 1 )
-  }
+  const slidePrev = () => active > 0 && setActive( active - 1 )
+  const slideNext = () => active < slides.length -1 && setActive( active + 1 )
 
   return (
     <section className={ styles.container }>
